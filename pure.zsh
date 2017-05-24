@@ -114,6 +114,12 @@ prompt_pure_preprompt_render() {
 	# Set the path.
 	preprompt_parts+=('%F{blue}%~%f')
 
+	# Username and machine, if applicable.
+	[[ -n $prompt_pure_username ]] && preprompt_parts+=('$prompt_pure_username')
+
+	# Python info, if applicable.
+	preprompt_parts+=('$prompt_pure_python')
+
 	# Add git branch and dirty status info.
 	typeset -gA prompt_pure_vcs_info
 	if [[ -n $prompt_pure_vcs_info[branch] ]]; then
@@ -124,8 +130,6 @@ prompt_pure_preprompt_render() {
 		preprompt_parts+=('%F{cyan}${prompt_pure_git_arrows}%f')
 	fi
 
-	# Username and machine, if applicable.
-	[[ -n $prompt_pure_username ]] && preprompt_parts+=('$prompt_pure_username')
 	# Execution time.
 	[[ -n $prompt_pure_cmd_exec_time ]] && preprompt_parts+=('%F{yellow}${prompt_pure_cmd_exec_time}%f')
 
@@ -452,6 +456,10 @@ prompt_pure_setup() {
 
 	# show username@host if root, with username in white
 	[[ $UID -eq 0 ]] && prompt_pure_username='%F{white}%n%f%F{242}@%m%f'
+
+	# show python info if possible
+	zstyle ':prezto:module:python:info:virtualenv' format ' env:%v'
+	prompt_pure_python='%F{242}$python_info[virtualenv]%f'
 
 	# prompt turns red if the previous command didn't exit with 0
 	PROMPT='%(?.%F{magenta}.%F{red})${PURE_PROMPT_SYMBOL:-❯}%f '
