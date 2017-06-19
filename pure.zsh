@@ -460,8 +460,12 @@ prompt_pure_setup() {
 	# set style of python info
 	zstyle ':prezto:module:python:info:virtualenv' format 'env:%v'
 
+	# set vim mode
+	zstyle ':prezto:module:editor:info:keymap:primary'   format "❯%f"
+	zstyle ':prezto:module:editor:info:keymap:alternate' format "❮%f"
+
 	# prompt turns red if the previous command didn't exit with 0
-	PROMPT='%(?.%F{magenta}.%F{red})${PURE_PROMPT_SYMBOL:-❯}%f '
+	PROMPT='%(?.%F{magenta}.%F{red})${editor_info[keymap]} '
 }
 
 prompt_pure_setup "$@"
