@@ -140,6 +140,8 @@ To have commands colorized as seen in the screenshot, install [zsh-syntax-highli
 1. Set `ZSH_THEME=""` in your `.zshrc` to disable oh-my-zsh themes.
 2. Follow the Pure [Install](#install) instructions.
 
+**NOTE:** `oh-my-zsh` overrides the prompt so Pure must be activated *after* `source $ZSH/oh-my-zsh.sh`.
+
 ### [prezto](https://github.com/sorin-ionescu/prezto)
 
 Pure is bundled with Prezto. No need to install it.
@@ -181,7 +183,7 @@ zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
 
 ## FAQ
 
-### I am stuck in a shell loop in my terminal that ask me to authenticate. What should I do ?
+### I am stuck in a shell loop in my terminal that asks me to authenticate. What should I do?
 
 [This is a known issue](https://github.com/sindresorhus/pure/issues/76).
 Using `git pull` when you get the username prompt should help you to break the loop by giving you a real prompt for this. **[This has been fixed in git 2.3](https://github.com/sindresorhus/pure/commit/f43ab97e1cf4a276b7a6e33eac055ee16610be15)**
@@ -216,11 +218,11 @@ On a default setup, running the command `kldload pty` should do the trick. If yo
 
 ## Team
 
-[![Sindre Sorhus](https://avatars.githubusercontent.com/u/170270?v=3&s=100)](http://sindresorhus.com) | [![Mathias Fredriksson](https://avatars.githubusercontent.com/u/147409?v=3&s=100)](https://github.com/mafredri)
+[![Sindre Sorhus](https://github.com/sindresorhus.png?size=100)](http://sindresorhus.com) | [![Mathias Fredriksson](https://github.com/mafredri.png?size=100)](https://github.com/mafredri)
 ---|---
-[Sindre Sorhus](http://sindresorhus.com) | [Mathias Fredriksson](https://github.com/mafredri)
+[Sindre Sorhus](https://github.com/sindresorhus) | [Mathias Fredriksson](https://github.com/mafredri)
 
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)
